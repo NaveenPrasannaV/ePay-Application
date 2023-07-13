@@ -21,7 +21,7 @@ public class Customer {
 	private String customerPassword;
 	private String customerEmail;
 
-	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Account> accountList;
 
 	public String getCustomerName() {

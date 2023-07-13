@@ -70,6 +70,13 @@
 			<artifactId>tomcat-jasper</artifactId>
 			<version>9.0.52</version>
 		</dependency>
+		<!--javax.servlet.jsp -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
 		<!--spring-boot-starter-test-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
