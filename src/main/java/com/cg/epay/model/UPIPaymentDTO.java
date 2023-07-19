@@ -2,7 +2,6 @@ package com.cg.epay.model;
 
 import org.springframework.stereotype.Component;
 
-import jakarta.persistence.Id;
 import lombok.Data;
 
 @Component

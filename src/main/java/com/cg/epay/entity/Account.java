@@ -2,14 +2,14 @@ package com.cg.epay.entity;
 
 import java.util.Date;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 
 @Entity
 public class Account {
@@ -26,6 +26,10 @@ public class Account {
 
 	@OneToOne
 	private DebitCard debitCard;
+
+	@ManyToOne
+	@JoinColumn(name = "upi_id")
+	private DebitCard UPIId;
 
 	public Long getAccountNumber() {
 		return accountNumber;
@@ -73,6 +77,14 @@ public class Account {
 
 	public void setDebitCard(DebitCard debitCard) {
 		this.debitCard = debitCard;
+	}
+
+	public DebitCard getUPIId() {
+		return UPIId;
+	}
+
+	public void setUPIId(DebitCard uPIId) {
+		UPIId = uPIId;
 	}
 
 }

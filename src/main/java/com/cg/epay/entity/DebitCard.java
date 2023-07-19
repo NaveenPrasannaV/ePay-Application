@@ -3,11 +3,13 @@ package com.cg.epay.entity;
 import java.util.Date;
 import java.util.Random;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+
 
 @Entity
 public class DebitCard {
@@ -18,7 +20,7 @@ public class DebitCard {
 	private int CVV;
 	private String cardIssuer;
 
-	@OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(mappedBy = "debitCard", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Account account;
 
 	public DebitCard() {
