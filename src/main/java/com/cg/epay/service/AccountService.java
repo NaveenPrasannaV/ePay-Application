@@ -1,8 +1,9 @@
 package com.cg.epay.service;
 
-import org.springframework.stereotype.Service;
+import org.springframework.http.ResponseEntity;
 
-@Service
 public interface AccountService {
+
+	ResponseEntity<String> createAccount(long customerId);
 
 }

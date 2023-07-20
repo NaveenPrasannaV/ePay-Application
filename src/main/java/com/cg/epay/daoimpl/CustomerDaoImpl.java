@@ -34,4 +34,14 @@ public class CustomerDaoImpl implements CustomerDao {
 		return customerRepository.existsByCustomerKYCNumber(customerKYCNumber);
 	}
 
+	@Override
+	public Customer getCustomerbyCustomerId(long customerId) {
+		return customerRepository.getById(customerId);
+	}
+
+	@Override
+	public boolean isExistsByCustomerId(long customerId) {
+		return customerRepository.existsById(customerId);
+	}
+
 }

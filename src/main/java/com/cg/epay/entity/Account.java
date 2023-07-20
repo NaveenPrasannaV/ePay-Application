@@ -1,5 +1,6 @@
 package com.cg.epay.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -17,11 +18,10 @@ import com.cg.epay.commonconstant.CommonConstants;
 public class Account {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long accountNumber;
 	private String ifscCode;
 	private double accountBalance;
-	private Date accountOpenDate;
+	private LocalDate accountOpenDate;
 
 	@ManyToOne
 	private Customer customer;
@@ -64,11 +64,11 @@ public class Account {
 		this.accountBalance = accountBalance;
 	}
 
-	public Date getAccountOpenDate() {
+	public LocalDate getAccountOpenDate() {
 		return accountOpenDate;
 	}
 
-	public void setAccountOpenDate(Date accountOpenDate) {
+	public void setAccountOpenDate(LocalDate accountOpenDate) {
 		this.accountOpenDate = accountOpenDate;
 	}
 

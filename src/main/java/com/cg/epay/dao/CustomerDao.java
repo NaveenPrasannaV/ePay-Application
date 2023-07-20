@@ -11,4 +11,8 @@ public interface CustomerDao {
 	boolean isExistsByCustomerMobileNumber(String customerMobileNumber);
 
 	boolean isExistsByCustomerKYCNumber(String customerKYCNumber);
+	
+	Customer getCustomerbyCustomerId(long customerId);
+	
+	boolean isExistsByCustomerId(long customerId);
 }
