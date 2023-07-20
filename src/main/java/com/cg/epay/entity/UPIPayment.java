@@ -2,7 +2,9 @@ package com.cg.epay.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -17,10 +19,7 @@ public class UPIPayment {
 	private String UPIId;
 	private String UPIPin;
 
-//	@OneToMany(mappedBy = "UPIId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//	private List<Account> accountList;
-	
-	@OneToMany
+	@OneToMany(mappedBy = "UPIId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Account> accountList;
 
 	public String getUPIId() {

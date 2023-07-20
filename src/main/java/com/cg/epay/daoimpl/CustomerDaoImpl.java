@@ -1,5 +1,7 @@
 package com.cg.epay.daoimpl;
 
-public class CustomerDaoImpl {
+import com.cg.epay.dao.CustomerDao;
+
+public class CustomerDaoImpl implements CustomerDao {
 
 }

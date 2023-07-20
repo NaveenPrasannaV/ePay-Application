@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.cg.epay.Utils.AccountUtil;
+import com.cg.epay.commonconstant.CommonConstants;
 
 @Entity
 public class Account {
@@ -30,6 +32,13 @@ public class Account {
 	@ManyToOne
 	@JoinColumn(name = "upi_id")
 	private DebitCard UPIId;
+
+	public Account() {
+		this.accountNumber = AccountUtil.generateRandomTwelveDigitAccountNumber();
+		this.ifscCode = CommonConstants.IFSC_CODE;
+		this.accountBalance = CommonConstants.INITIAL_ACCOUNT_BALANCE;
+		this.accountOpenDate = AccountUtil.getCurrentDate();
+	}
 
 	public Long getAccountNumber() {
 		return accountNumber;
