@@ -3,14 +3,13 @@ package com.cg.epay.entity;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-
 
 @Entity
 public class Customer {
@@ -19,6 +18,7 @@ public class Customer {
 	private Long customerId;
 	private String customerName;
 	private String customerMobileNumber;
+	@Column(name = "customer_kyc_number")
 	private String customerKYCNumber;
 	private String customerPassword;
 	private String customerEmail;

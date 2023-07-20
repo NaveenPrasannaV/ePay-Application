@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 public class CustomerDTO {
 
+	//Auto-generated
 	private String customerId;
 	private String customerName;
 	private String customerMobileNumber;

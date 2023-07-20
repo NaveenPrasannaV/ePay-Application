@@ -29,7 +29,7 @@ public class DebitCard {
 		this.cardNumber = DebitCardUtil.generateRandomSixteenDigitCardNumber();
 		this.cardExpiryDate = DebitCardUtil.getYearMonthTenYearsFromNow();
 		this.CVV = DebitCardUtil.generateRandomThreeDigitCVV();
-		this.cardIssuer = CommonConstants.CARDISSUER;
+		this.cardIssuer = DebitCardUtil.getRandomCardType();
 	}
 
 	public String getCardNumber() {

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.Random;
 
+import com.cg.epay.enums.DebitCardType;
+
 public class DebitCardUtil {
 
 	/*
@@ -36,6 +38,20 @@ public class DebitCardUtil {
 		Random random = new Random();
 		// Generate a random three-digit CVV (between 100 and 999)
 		return random.nextInt(900) + 100;
+	}
+
+	public static String getRandomCardType() {
+		// Get all the values of the CardType enum
+		DebitCardType[] cardTypes = DebitCardType.values();
+
+		// Create a Random object
+		Random random = new Random();
+
+		// Generate a random index to pick a card type
+		int randomIndex = random.nextInt(cardTypes.length);
+
+		// Return the randomly selected card type
+		return cardTypes[randomIndex].name();
 	}
 
 }
