@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.epay.exception.EntityAlreadyExistsException;
 import com.cg.epay.service.AccountService;
 
 @RestController
 public class AccountController {
-	
+
 	@Autowired
 	AccountService accountService;
 
 	@GetMapping(path = "/createaccount/{customerId}")
 	@ResponseBody
-	public ResponseEntity<String> createAccount(@PathVariable("customerId") long customerId) {
+	public ResponseEntity<String> createAccount(@PathVariable("customerId") long customerId)
+			throws EntityAlreadyExistsException {
 		return accountService.createAccount(customerId);
 	}
 

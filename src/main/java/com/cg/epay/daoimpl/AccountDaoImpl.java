@@ -19,4 +19,13 @@ public class AccountDaoImpl implements AccountDao {
 		return "Account Created Successfully!";
 	}
 
+	@Override
+	public boolean existsByAccountNumber(Long accountNumber) {
+		return accountRepository.existsById(accountNumber);
+	}
+
+	@Override
+	public int countAccountByCustomerId(Long customerId) {
+		return accountRepository.countByCustomerCustomerId(customerId);
+	}
 }

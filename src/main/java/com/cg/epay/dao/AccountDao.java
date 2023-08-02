@@ -6,4 +6,8 @@ public interface AccountDao {
 
 	String saveAccount(Account account);
 
+	boolean existsByAccountNumber(Long accountNumber);
+
+	int countAccountByCustomerId(Long customerId);
+
 }

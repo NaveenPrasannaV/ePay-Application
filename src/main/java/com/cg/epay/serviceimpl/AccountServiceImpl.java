@@ -10,6 +10,7 @@ import com.cg.epay.dao.AccountDao;
 import com.cg.epay.dao.CustomerDao;
 import com.cg.epay.entity.Account;
 import com.cg.epay.entity.Customer;
+import com.cg.epay.exception.EntityAlreadyExistsException;
 import com.cg.epay.exception.ValidationException;
 import com.cg.epay.service.AccountService;
 
@@ -22,13 +23,27 @@ public class AccountServiceImpl implements AccountService {
 	AccountDao accountDao;
 
 	@Override
-	public ResponseEntity<String> createAccount(long customerId) {
+	public ResponseEntity<String> createAccount(long customerId) throws EntityAlreadyExistsException {
 		if (!customerDao.isExistsByCustomerId(customerId)) {
 			throw new ValidationException("Invalid Customer Id!");
 		}
-		Customer customer = customerDao.getCustomerbyCustomerId(customerId);
-		Account account = AccountUtil.creareAccount(customer);
-		return new ResponseEntity<>(accountDao.saveAccount(account), HttpStatus.OK);
+		if (accountDao.countAccountByCustomerId(customerId) < 5) {
+			Customer customer = customerDao.getCustomerbyCustomerId(customerId);
+			Account account = AccountUtil.creareAccount(customer);
+			account.setAccountNumber(generateRandomTwelveDigitAccountNumber());
+			return new ResponseEntity<>(accountDao.saveAccount(account), HttpStatus.OK);
+		}
+		throw new EntityAlreadyExistsException("Exceed maximun no of accounts!");
+	}
+
+	@Override
+	public Long generateRandomTwelveDigitAccountNumber() {
+		Long accountNumber = 0l;
+		do {
+			accountNumber = AccountUtil.generateRandomTwelveDigitAccountNumber();
+		} while (accountDao.existsByAccountNumber(accountNumber));
+		return accountNumber;
+
 	}
 
 }

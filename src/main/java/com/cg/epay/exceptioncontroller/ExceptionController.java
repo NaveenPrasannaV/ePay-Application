@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.cg.epay.exception.EntityAlreadyExistsException;
 import com.cg.epay.exception.ValidationException;
 import com.cg.epay.factory.ObjectFactory;
-import com.cg.shopping.exceptioncontroller.ErrorMessage;
 
 @RestControllerAdvice
 public class ExceptionController {

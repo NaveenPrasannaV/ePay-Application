@@ -34,7 +34,6 @@ public class Account {
 	private DebitCard UPIId;
 
 	public Account() {
-		this.accountNumber = AccountUtil.generateRandomTwelveDigitAccountNumber();
 		this.ifscCode = CommonConstants.IFSC_CODE;
 		this.accountBalance = CommonConstants.INITIAL_ACCOUNT_BALANCE;
 		this.accountOpenDate = AccountUtil.getCurrentDate();

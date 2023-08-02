@@ -18,6 +18,10 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
 		<!--spring-boot-starter-data-jpa-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -38,7 +42,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-		
+
 		<!--spring-boot-devtools -->
 		<dependency>
 			<groupId>jakarta.persistence</groupId>
@@ -94,11 +98,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.cg</groupId>
-			<artifactId>OnlineShop</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
